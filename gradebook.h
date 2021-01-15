@@ -13,6 +13,7 @@ class gradebook{
         gradebook();
         int getNumCourses() {return numCourses;}
         void setNumCourses(int newNum);
+        void addCourses(int num);
 
     private:
         int numCourses;
@@ -23,8 +24,21 @@ class gradebook{
 gradebook::gradebook(){
     cout << "How many courses?" << endl;
     cin >> numCourses;
-    cout << getNumCourses();
+    addCourses(numCourses);
 }
 
+void gradebook::addCourses(int num){
+    string name;
+    int numCategories;
+    for (int i = 0; i < num; i++){
+        cout << i+1 << " course:" << endl;
+        cout << "What is the name of course?" << endl;
+        cin >> name;
+        cout << "How many categories?" << endl;
+        cin >> numCategories;
+
+        allClasses.push_back(course(name, numCategories));
+    }
+}
 
 #endif

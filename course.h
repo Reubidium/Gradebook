@@ -12,6 +12,8 @@ using std::string;
 
 class course{
     public:
+        course(string courseName, int num){name = courseName, numCategories = num;}
+        
         string getName();
         void setName(string newName);
 
@@ -24,5 +26,9 @@ class course{
         int numCategories;
         vector<category> categories;
 };
+
+void course::createNewCategory(){
+    
+}
 
 #endif
